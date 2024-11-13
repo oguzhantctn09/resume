@@ -1,197 +1,102 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Oğuzhan Taçtan</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="./bootstrap.min.css" rel="stylesheet" type="text/css"/>
-  <link href="./fontawesome.min.css" rel="stylesheet" type="text/css"/>
-</head>
-
-<body>
-  <div class="container-fluid" style="height: 70px; background-color: #110d0e;">
-    <header>
-      <div class="container">
-        <a href="https://www.linkedin.com/in/o%C4%9Fuzhan-ta%C3%A7tan-463a421ab/" class="float-end" target="_blank">
-          <img src="./img/linkedin_icon.png" alt="LinkedIn Link" style="margin-top: 15px; height: 24px">
-        </a>
-       <button class="btn btn-link btn-sm float-end text-white">en</button>
-        <button class="btn btn-link btn-sm float-end text-white">tr</button>
-      </div>
-    </header>
-  </div>
-
-  <div class="container-fluid" style="height: 500px; background-color: #825260;">
-    <div class="container">
-      <div class="row mb-3">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-          <img src="./img/profile_photo.jpeg" alt="Profile Photo" style="margin-top: 150px; height: 400px">
-        </div>
-
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-          <div class="my-3 mx-1 p-2">
-            <h1>Who Am I ?</h1>
-          </div>
-          <div class="my-3 mx-1 p-2">
-            <p>I am Oğuzhan, a dedicated professional in the realm of
-               software and IT. With a strong passion for technology,
-               I have forged a path in this ever-evolving field, driven
-               by a desire to create innovative solutions and contribute
-               to the digital landscape. My journey has equipped me with
-               a solid foundation in coding, problem-solving, and project
-               management, allowing me to effectively navigate the complexities
-               of software development. As an avid learner, I continuously
-               seek to expand my knowledge, staying abreast of industry trends
-               and embracing new challenges with enthusiasm. With a commitment
-               to excellence, I am poised to make impactful contributions
-               in the world of software and IT.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-3 justify-content-center">
-        <div class="card text-white mb-3 mx-3" style="max-width: 18rem; background-color: #6d444f;">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-        <div class="card text-white mb-3 mx-3" style="max-width: 18rem; background-color: #6d444f">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-        <div class="card text-white mb-3 mx-3" style="max-width: 18rem; background-color: #6d444f">
-          <div class="card-header">Header</div>
-          <div class="card-body">
-            <h5 class="card-title">Light card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="./bootstrap.min.js"></script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oguzhan tactan</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pastel Geçiş Örneği</title>
     <style>
+        /* Genel stil */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        header {
-            background-color: #fff;
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            
-        }
-        nav {
-            background-color: #333;
-            overflow: hidden;
-        }
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        .content {
+            background-color: #f4f4f4;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.5s forwards;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #555;
+            max-width: 600px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.5s forwards;
+            animation-delay: 0.5s;
+        }
+
+        .button {
             margin-top: 20px;
-        }
-        .post {
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            padding: 20px;
-            flex: 1 1 45%;
-            box-sizing: border-box;
-        }
-        .post h2 {
-            margin-top: 0;
-        }
-        footer {
-            background-color: #333;
+            padding: 15px 30px;
+            font-size: 1em;
+            background-color: #ffb6c1; /* Pastel pembe */
             color: white;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.5s forwards;
+            animation-delay: 1s;
         }
-        @media (max-width: 768px) {
-            .post {
-                flex: 1 1 100%;
+
+        .button:hover {
+            background-color: #ff6f91; /* Hoverda daha derin pastel pembe */
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Arka plan animasyonu */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ffb6c1, #add8e6, #f0e68c, #ffdab9);
+            background-size: 400% 400%;
+            animation: gradientBackground 10s ease infinite;
+        }
+
+        /* Arka planın pastel renk geçişi */
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Animasyon tanımları */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <img src="./logo.png" height="50"></img>
-    </header>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="container">
-        <div class="content">
-            <div class="post">
-                <h2>Blog Post 1</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet turpis quis odio convallis convallis. Integer lacinia, velit et suscipit elementum, ligula ligula elementum tortor, eget ultricies justo metus vel quam.</p>
-            </div>
-            <div class="post">
-                <h2>Blog Post 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet turpis quis odio convallis convallis. Integer lacinia, velit et suscipit elementum, ligula ligula elementum tortor, eget ultricies justo metus vel quam.</p>
-            </div>
-            <div class="post">
-                <h2>Blog Post 3</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet turpis quis odio convallis convallis. Integer lacinia, velit et suscipit elementum, ligula ligula elementum tortor, eget ultricies justo metus vel quam.</p>
-            </div>
-            <div class="post">
-                <h2>Blog Post 4</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet turpis quis odio convallis convallis. Integer lacinia, velit et suscipit elementum, ligula ligula elementum tortor, eget ultricies justo metus vel quam.</p>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Oğuzhan Taçtan. All rights reserved.</p>
-    </footer>
-
+    <div class="background"></div>
+    <h1>Hoşgeldiniz!</h1>
+    <p>Web sitesine yakında erişim sağlayabileceksiniz.</p>
+    <button class="button">Başlayın</button>
 </body>
 </html>
-
