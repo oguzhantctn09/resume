@@ -2,80 +2,185 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Resume - Oguzhan Tactan</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Oğuzhan Taçtan | CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(to bottom, #494949, #2e2d31);
+      color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #d1d5db;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      color: #333;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      transform: translateY(-40px);
+    }
+    section {
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #4f46e5;
+      border-left: 5px solid #6366f1;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+	.skills-grid {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	  gap: 20px;
+	}
+	.skill {
+	  margin-bottom: 10px;
+	}
+    .skills div {
+      margin-bottom: 10px;
+    }
+    .bar {
+      background: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 12px;
+      background: #6366f1;
+      width: 80%;
+      transition: width 1s ease;
+    }
+    .project, .experience {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border-left: 4px solid #6366f1;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #000000;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white">
-  <div class="max-w-4xl mx-auto px-4 py-10">
-    <!-- Başlık -->
-    <header class="text-center mb-10">
-      <h1 class="text-4xl font-bold">Oğuzhan Taçtan</h1>
-      <p class="text-xl mt-2">Orta Katman Uzmanı | NodeJS & React Developer</p>
-      <p class="text-sm mt-1 text-gray-500">Aydın, Türkiye</p>
-	  <p class="text-sm mt-1 text-gray-500">+90(542)-419-32-07</p>
-    </header>
+<body>
 
-    <!-- Hakkımda -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-300 pb-2">Hakkımda</h2>
-      <p>
-        Orta Katman sistemleri üzerinde uzmanlaşmış, modern web teknolojileriyle (NodeJS, React) full stack projeler geliştiren bir yazılım geliştiricisiyim.
-        DevOps, sunucu yönetimi ve uygulama sunucusu konularında da aktif rol alıyorum. Temiz kod, sade tasarım ve sürdürülebilirlik önceliğimdir.
-      </p>
+  <header>
+    <h1>Oğuzhan Taçtan</h1>
+    <p>Development & Middleware & DevOps • React / NodeJS / Monitoring</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>🧑‍💻 Hakkımda</h2>
+      <p> Orta Katman sistemleri üzerinde uzmanlaşmış, modern web teknolojileriyle (NodeJS, React) full stack projeler geliştiren bir yazılım geliştiricisiyim.
+        DevOps, sunucu yönetimi ve uygulama sunucusu konularında da aktif rol alıyorum. Temiz kod, sade tasarım ve sürdürülebilirlik önceliğimdir.</p>
     </section>
 
-    <!-- Yetenekler -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-300 pb-2">Yetenekler</h2>
-      <ul class="list-disc pl-5 space-y-1">
-        <li>NodeJS ile API geliştirme</li>
-        <li>React ile SPA ve dashboard uygulamaları</li>
-        <li>Linux & Sunucu Yönetimi</li>
-        <li>OpenShift / Docker / Kubernetes bilgisi</li>
-        <li>WebLogic, JBOSS, Apache gibi uygulama sunucularında deneyim</li>
-        <li>Monitoring & APM çözümleri</li>
-        <li>CI/CD ve otomasyon süreçleri</li>
-      </ul>
-    </section>
-
-    <!-- Deneyim -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-300 pb-2">Deneyim</h2>
-      <div class="space-y-4">
-        <div>
-          <h3 class="text-xl font-semibold">Allianz Sigorta</h3>
-		  <p class="text-sm text-gray-500">Orta Katman Uzmanı | 01/2023 - halen</p>
-          <p>Sunucu ve uygulama sunucularının yönetimi, yazılım altyapısının DevOps süreçlerine entegrasyonu, monitoring ve destek süreçlerinde aktif görev alındı.</p>
+    <section>
+      <h2>🛠️ Yetenekler</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <strong>Openshift</strong>
+          <div class="bar"><div class="bar-fill" style="width: 90%;"></div></div>
         </div>
-        <div>
-          <h3 class="text-xl font-semibold">PrimeIT Bilişim</h3>
-          <p class="text-sm text-gray-500">Full Stack Developer | 01/2022 - halen</p>
-          <p>NodeJS ve React kullanarak dashboard ve iç servis uygulamaları geliştirildi.</p>
+        <div class="skill">
+          <strong>Kubernetes</strong>
+          <div class="bar"><div class="bar-fill" style="width: 85%;"></div></div>
+        </div class="skill">
+        <div class="skill">
+          <strong>Docker</strong>
+          <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
+        </div class="skill">
+        <div class="skill">
+          <strong>Linux</strong>
+          <div class="bar"><div class="bar-fill" style="width: 60%;"></div></div>
+        </div>
+        <div class="skill">
+          <strong>NodeJS</strong>
+          <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
+        </div>
+        <div class="skill">
+          <strong>ReactJS</strong>
+          <div class="bar"><div class="bar-fill" style="width: 85%;"></div></div>
+        </div>
+        <div class="skill">
+          <strong>Dynatrace</strong>
+          <div class="bar"><div class="bar-fill" style="width: 95%;"></div></div>
+        </div>
+        <div class="skill">
+          <strong>GO</strong>
+          <div class="bar"><div class="bar-fill" style="width: 20%;"></div></div>
+        </div>
+		<div class="skill">
+          <strong>Weblogic</strong>
+          <div class="bar"><div class="bar-fill" style="width: 60%;"></div></div>
         </div>
       </div>
     </section>
 
-    <!-- Projeler -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-300 pb-2">Projeler</h2>
-      <ul class="space-y-3">
-        <li>
-          <strong>PrimeON</strong> – NodeJS ve React ile yazılmış, gerçek zamanlı veri izleme paneli.
-        </li>
-        <li>
-          <strong>Openshift</strong> – Kubernetes ortamında çalışan middleware servisleri yöneten araç.
-        </li>
-      </ul>
+    <section>
+      <h2>💼 Deneyim</h2>
+      <div class="experience">
+        <h3>Allianz Sigorta</h3>
+        <p>Orta Katman Uzmanı | 01/2023 - Günümüz</p>
+        <p>OpenShift, Dynatrace ve custom dashboard sistemleri ile canlı izleme çözümleri geliştirdim.</p>
+      </div>
+	  <div class="experience">
+        <h3>PrimeIT Bilişim</h3>
+        <p>Full Stack Developer | 01/2022 - Günümüz</p>
+        <p>ReactJS ve NodeJS gibi ortamlarda Monitoring toolu ve db script çalıştırma toolu yazılmasında görev aldım.</p>
+      </div>
     </section>
 
-    <!-- İletişim -->
-    <section class="mb-10">
-      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-300 pb-2">İletişim</h2>
-      <p>E-posta: <span class="text-blue-500">oguzhantactan09@gmail.com</span></p>
-	  <a class="text-blue-500" href="https://github.com/oguzhantctn09">GitHub</a>
-	  <a class="text-blue-500" href="https://www.linkedin.com/in/oğuzhan-taçtan-463a421ab">LinkedIn</a>
+    <section>
+      <h2>📁 Projeler</h2>
+      <div class="project">
+        <h3>PrimeON</h3>
+        <p>Database ve Host izleme aracı</p>
+      </div>
+      <div class="project">
+        <h3>DbRunner</h3>
+        <p>Database script çalıştırma otomasyon aracı</p>
+      </div>
+      <div class="project">
+        <h3>Kubernetes Taşınması</h3>
+        <p>Firmada Kubernetes geçiş çalışmalarında aktif rol aldım.</p>
+      </div>
     </section>
+
+    <section>
+      <h2>📞 İletişim</h2>
+      <p><strong>Email:</strong> oguzhantactan09@gmail.com</p>
+      <p><strong><a href="https://www.linkedin.com/in/oğuzhan-taçtan-463a421ab">LinkedIn:</a></strong></p>
+    </section>
+
+    <footer>
+      © 2025 Oğuzhan Taçtan • Tüm Hakları Saklıdır
+    </footer>
   </div>
+
 </body>
 </html>
