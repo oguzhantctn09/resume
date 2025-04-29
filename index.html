@@ -1,182 +1,81 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Resume - Oğuzhan Taçtan</title>
-    <style>
-        /* Genel stil ayarları */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            margin-top: 30px;
-        }
-
-        .container {
-            width: 80%;
-            max-width: 900px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-        }
-
-        h1, h2 {
-            text-align: center;
-            color: #007BFF;
-        }
-
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section h2 {
-            margin-bottom: 10px;
-        }
-
-        .section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .section ul li {
-            margin: 5px 0;
-        }
-
-        .contact-info, .education, .experience, .skills {
-            margin-bottom: 20px;
-        }
-
-        .skills ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skills ul li {
-            background-color: #f1f1f1;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-
-        /* Yavaş geçişler */
-        h1, h2, .section h2 {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards;
-        }
-
-        h1 {
-            animation-delay: 0.2s;
-        }
-
-        .section h2 {
-            animation-delay: 0.3s;
-        }
-
-        .section ul li {
-            opacity: 0;
-            animation: fadeInUp 1s forwards;
-            animation-delay: 0.5s;
-        }
-
-        .section ul li:nth-child(even) {
-            animation-delay: 0.6s;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Oguzhan Tactan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <!-- Kişisel Bilgiler -->
-        <section class="contact-info section">
-            <h1>Oğuzhan Taçtan</h1>
-            <p>Email: <strong>oguzhantactan09@gmail.com</strong></p>
-            <p>Telefon: <strong>(+90) 542 419 32 07 </strong></p>
-            <p>Adres: <strong>Aydın, Türkiye</strong></p>
-        </section>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-white">
+  <div class="max-w-4xl mx-auto px-4 py-10">
+    <!-- Başlık -->
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold">Oğuzhan Taçtan</h1>
+      <p class="text-xl mt-2">Orta Katman Uzmanı | NodeJS & React Developer</p>
+      <p class="text-sm mt-1 text-gray-500">Aydın, Türkiye</p>
+	  <p class="text-sm mt-1 text-gray-500">+90(542)-419-32-07</p>
+    </header>
 
-        <!-- Eğitim Bilgileri -->
-        <section class="education section">
-            <h2>Eğitim</h2>
-            <ul>
-                <li><strong>Hacettepe Üniversitesi Geomatik Mühendisliği</strong> (2016 - 2021): Lisans, GPA: 3.12</li>
-                <li><strong>Aydın Atatürk Anadolu Lisesi</strong> (2012 - 2016): Lise</li>
-                <!-- Eklemek için buraya daha fazla eğitim bilgisi ekleyebilirsiniz. -->
-            </ul>
-        </section>
+    <!-- Hakkımda -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-300 pb-2">Hakkımda</h2>
+      <p>
+        Orta Katman sistemleri üzerinde uzmanlaşmış, modern web teknolojileriyle (NodeJS, React) full stack projeler geliştiren bir yazılım geliştiricisiyim.
+        DevOps, sunucu yönetimi ve uygulama sunucusu konularında da aktif rol alıyorum. Temiz kod, sade tasarım ve sürdürülebilirlik önceliğimdir.
+      </p>
+    </section>
 
-        <!-- İş Deneyimi -->
-        <section class="experience section">
-            <h2>İş Deneyimi</h2>
-            <ul>
-                <li><strong>PrimeIT Bilişim A.Ş. - Full-Stack Developer</strong> (2021 - 2024)</li>
-                <ul>
-                    <li>React ve NodeJS gibi güncel framework'ler ile web sitesi tasarımı, yazılımı.</li>
-                    <li>Monitoring tool'u geliştirildi.</li>
-					<li>DB Script Execute aracı geliştirildi.</li>
-                </ul>
-                <li><strong>PrimeIT Bilişim A.Ş. - Orta Katman Yönetimi (Allianz Sigorta - Danışman)</strong> (2022 - 2024)</li>
-                <ul>
-                    <li>Container ve container yönetim teknolojileri kullanımı</li>
-                    <li>APM toolları yönetimi ve kontrolü</li>
-                    <li>...</li>
-                </ul>
-            </ul>
-        </section>
+    <!-- Yetenekler -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-300 pb-2">Yetenekler</h2>
+      <ul class="list-disc pl-5 space-y-1">
+        <li>NodeJS ile API geliştirme</li>
+        <li>React ile SPA ve dashboard uygulamaları</li>
+        <li>Linux & Sunucu Yönetimi</li>
+        <li>OpenShift / Docker / Kubernetes bilgisi</li>
+        <li>WebLogic, JBOSS, Apache gibi uygulama sunucularında deneyim</li>
+        <li>Monitoring & APM çözümleri</li>
+        <li>CI/CD ve otomasyon süreçleri</li>
+      </ul>
+    </section>
 
-        <!-- Teknolojiler / Beceriler -->
-        <section class="skills section">
-            <h2>Beceriler & Teknolojiler</h2>
-            <ul>
-                <li>HTML, CSS, JavaScript</li>
-                <li>React, Node.js</li>
-                <li>SQL, MariaDB, PostgreDB</li>
-                <li>Git, GitHub</li>
-                <li>Nginx, Nginx Plus, Apache HTTP Server</li>
-				<li>Docker, Kubernetes, Openshift</li>
-				<li>Dynatrace, Glowroot, Riverbed</li>
-                <!-- Teknolojileri ve becerilerinizi eklemek için buraya yeni öğeler ekleyebilirsiniz. -->
-            </ul>
-        </section>
+    <!-- Deneyim -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-300 pb-2">Deneyim</h2>
+      <div class="space-y-4">
+        <div>
+          <h3 class="text-xl font-semibold">Allianz Sigorta</h3>
+		  <p class="text-sm text-gray-500">Orta Katman Uzmanı | 01/2023 - halen</p>
+          <p>Sunucu ve uygulama sunucularının yönetimi, yazılım altyapısının DevOps süreçlerine entegrasyonu, monitoring ve destek süreçlerinde aktif görev alındı.</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">PrimeIT Bilişim</h3>
+          <p class="text-sm text-gray-500">Full Stack Developer | 01/2022 - halen</p>
+          <p>NodeJS ve React kullanarak dashboard ve iç servis uygulamaları geliştirildi.</p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Diller -->
-        <section class="languages section">
-            <h2>Diller</h2>
-            <ul>
-                <li><strong>Türkçe:</strong> Anadil</li>
-                <li><strong>İngilizce:</strong> İleri Seviye</li>
-                <!-- Dillerinizi buraya ekleyebilirsiniz. -->
-            </ul>
-        </section>
+    <!-- Projeler -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-300 pb-2">Projeler</h2>
+      <ul class="space-y-3">
+        <li>
+          <strong>PrimeON</strong> – NodeJS ve React ile yazılmış, gerçek zamanlı veri izleme paneli.
+        </li>
+        <li>
+          <strong>Openshift</strong> – Kubernetes ortamında çalışan middleware servisleri yöneten araç.
+        </li>
+      </ul>
+    </section>
 
-        <!-- İlgi Alanları -->
-        <section class="interests section">
-            <h2>İlgi Alanları</h2>
-            <ul>
-                <li>Yazılım geliştirme ve yeni teknolojilerle ilgilenmek</li>
-                <li>Seyahat etmek, farklı kültürleri keşfetmek</li>
-				<li>Bilimsel makale ve dergiler okumak</li>
-                <!-- Kendi ilgi alanlarınızı buraya ekleyebilirsiniz. -->
-            </ul>
-        </section>
-    </div>
+    <!-- İletişim -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 border-b border-gray-300 pb-2">İletişim</h2>
+      <p>E-posta: <span class="text-blue-500">oguzhantactan09@gmail.com</span></p>
+	  <a class="text-blue-500" href="https://github.com/oguzhantctn09">GitHub</a>
+	  <a class="text-blue-500" href="https://www.linkedin.com/in/oğuzhan-taçtan-463a421ab">LinkedIn</a>
+    </section>
+  </div>
 </body>
 </html>
