@@ -1,186 +1,534 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Oğuzhan Taçtan | CV</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Outfit', sans-serif;
-      background: linear-gradient(to bottom, #494949, #2e2d31);
-      color: #fff;
-    }
-    header {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #d1d5db;
-    }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      background: white;
-      color: #333;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-      transform: translateY(-40px);
-    }
-    section {
-      margin-bottom: 40px;
-    }
-    h2 {
-      color: #4f46e5;
-      border-left: 5px solid #6366f1;
-      padding-left: 10px;
-      margin-bottom: 20px;
-    }
-	.skills-grid {
-	  display: grid;
-	  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	  gap: 20px;
-	}
-	.skill {
-	  margin-bottom: 10px;
-	}
-    .skills div {
-      margin-bottom: 10px;
-    }
-    .bar {
-      background: #e0e0e0;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 12px;
-      background: #6366f1;
-      width: 80%;
-      transition: width 1s ease;
-    }
-    .project, .experience {
-      background: #f9fafb;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      border-left: 4px solid #6366f1;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #000000;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oğuzhan Taçtan | CV - Fütüristik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        :root {
+            --font-primary: 'Exo 2', sans-serif;
+            --font-headings: 'Orbitron', sans-serif; /* Daha stilize başlık fontu */
+
+            --bg-deep-space: #0a0f1f; /* Çok koyu mavi/siyah */
+            --bg-element: rgba(20, 30, 60, 0.7); /* Yarı saydam eleman arka planı */
+            --bg-element-hover: rgba(30, 45, 80, 0.8);
+            
+            --accent-cyber-blue: #00ffff; /* Parlak siber mavisi */
+            --accent-secondary-glow: #9040ff; /* Morumsu bir ikincil parlama */
+
+            --text-primary-light: #e0e6f0; /* Ana metin rengi - açık */
+            --text-secondary-light: #a0a8b8; /* İkincil metin - biraz daha soluk */
+            
+            --border-glow-color: rgba(0, 255, 255, 0.5);
+            --border-subtle: rgba(0, 255, 255, 0.2);
+
+            --shadow-glow: 0 0 15px var(--accent-cyber-blue), 0 0 30px var(--accent-cyber-blue);
+            --shadow-soft-glow: 0 0 8px rgba(0, 255, 255, 0.7);
+
+            --border-radius-sharp: 4px; /* Daha keskin köşeler */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--bg-deep-space);
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px; /* Subtle grid */
+            color: var(--text-primary-light);
+            line-height: 1.6;
+            padding: 30px 15px;
+            overflow-x: hidden;
+        }
+
+        .futuristic-cv-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: transparent; /* Ana container arka planı body'den gelecek */
+            border: 1px solid var(--border-subtle);
+            box-shadow: 0 0 25px rgba(0,255,255,0.1), inset 0 0 10px rgba(0,255,255,0.05);
+            border-radius: var(--border-radius-sharp);
+            position: relative;
+        }
+
+        .futuristic-header {
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+            background: linear-gradient(135deg, rgba(0,20,40,0.3), rgba(10,30,60,0.5));
+            position: relative;
+            overflow: hidden;
+        }
+        /* Dekoratif çizgiler */
+        .futuristic-header::before, .futuristic-header::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            background: var(--accent-cyber-blue);
+            box-shadow: var(--shadow-soft-glow);
+            opacity: 0.7;
+        }
+        .futuristic-header::before {
+            width: 30%; top: 10px; left: -5%; transform: skewX(-30deg);
+        }
+        .futuristic-header::after {
+            width: 30%; bottom: 10px; right: -5%; transform: skewX(-30deg);
+        }
+
+
+        .profile-pic-futuristic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%; /* Veya altıgen için clip-path */
+            /* clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); */
+            border: 3px solid var(--accent-cyber-blue);
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 0 20px var(--accent-cyber-blue), inset 0 0 10px rgba(0,255,255,0.3);
+            padding: 3px; /* İç parlama için alan */
+            background-color: var(--bg-deep-space);
+        }
+
+        .futuristic-header h1 {
+            font-family: var(--font-headings);
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px var(--accent-cyber-blue), 0 0 10px var(--accent-cyber-blue), 0 0 2px #fff;
+        }
+
+        .futuristic-header p.subtitle-futuristic {
+            font-size: 1.1rem;
+            color: var(--text-secondary-light);
+            letter-spacing: 1px;
+        }
+
+        .futuristic-main-content {
+            padding: 30px;
+        }
+
+        section.futuristic-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: var(--bg-element);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--border-radius-sharp);
+            box-shadow: inset 0 0 15px rgba(0,30,60,0.5);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+         section.futuristic-section:hover {
+            background-color: var(--bg-element-hover);
+            box-shadow: inset 0 0 20px rgba(0,40,70,0.6), 0 0 10px var(--border-glow-color);
+         }
+
+
+        h2.futuristic-section-title {
+            font-family: var(--font-headings);
+            font-size: 1.8rem;
+            color: var(--accent-cyber-blue);
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-glow-color);
+            display: flex;
+            align-items: center;
+            text-shadow: 0 0 8px var(--accent-cyber-blue);
+            letter-spacing: 1px;
+        }
+
+        h2.futuristic-section-title .section-icon-futuristic {
+            margin-right: 15px;
+            font-size: 1.7rem;
+            filter: drop-shadow(0 0 5px var(--accent-cyber-blue));
+        }
+
+        .about-me-futuristic p {
+            font-size: 1rem;
+            color: var(--text-primary-light);
+        }
+
+        .skills-grid-futuristic {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item-futuristic {
+            padding: 12px 15px;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--border-radius-sharp);
+            background-color: rgba(0,0,0,0.1); /* Skill item'ı section'dan biraz daha koyu */
+        }
+        
+        .skill-info-futuristic {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .skill-info-futuristic strong {
+            font-weight: 500;
+            color: var(--text-primary-light);
+            font-size: 0.95rem;
+        }
+        .skill-info-futuristic .percentage-futuristic {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--accent-cyber-blue);
+            text-shadow: 0 0 5px var(--accent-cyber-blue);
+        }
+
+        .progress-bar-futuristic {
+            background: rgba(0,0,0,0.3); /* Koyu çubuk arka planı */
+            border-radius: var(--border-radius-sharp);
+            overflow: hidden;
+            height: 8px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .progress-bar-fill-futuristic {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-secondary-glow), var(--accent-cyber-blue));
+            width: 0; /* JS ile ayarlanacak */
+            border-radius: calc(var(--border-radius-sharp) - 1px);
+            box-shadow: 0 0 8px var(--accent-cyber-blue);
+            transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1); /* Daha akıcı bir animasyon */
+        }
+
+        .content-card-futuristic {
+            padding: 20px;
+            border-radius: var(--border-radius-sharp);
+            margin-bottom: 20px;
+            border: 1px solid var(--border-subtle);
+            background-color: transparent; /* Section'dan arka plan alacak */
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+        .content-card-futuristic:hover {
+            border-color: var(--border-glow-color);
+        }
+
+        /* Kartlara fütüristik köşe detayı */
+        .content-card-futuristic::before {
+            content: '';
+            position: absolute;
+            top: -1px; left: -1px;
+            width: 15px; height: 15px;
+            border-top: 2px solid var(--accent-cyber-blue);
+            border-left: 2px solid var(--accent-cyber-blue);
+            opacity: 0.8;
+        }
+         .content-card-futuristic::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; right: -1px;
+            width: 15px; height: 15px;
+            border-bottom: 2px solid var(--accent-cyber-blue);
+            border-right: 2px solid var(--accent-cyber-blue);
+            opacity: 0.8;
+        }
+
+
+        .content-card-futuristic h3 {
+            font-family: var(--font-headings);
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--accent-cyber-blue);
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .content-card-futuristic p.meta-futuristic {
+            font-size: 0.85rem;
+            color: var(--text-secondary-light);
+            margin-bottom: 10px;
+            font-style: normal; /* İtalik yerine */
+            opacity: 0.8;
+        }
+
+        .content-card-futuristic p, .content-card-futuristic ul li {
+            font-size: 0.9rem;
+            color: var(--text-primary-light);
+        }
+        .content-card-futuristic ul {
+            list-style-type: none; /* Fütüristik temada madde işareti farklı olabilir */
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        .content-card-futuristic ul li {
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+        }
+         .content-card-futuristic ul li::before { /* Özel madde işareti */
+            content: '»'; /* veya '\25B8' gibi bir unicode karakter */
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyber-blue);
+            font-weight: bold;
+         }
+
+
+        .contact-info-futuristic p {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .contact-info-futuristic p strong {
+            font-weight: 500;
+            margin-right: 10px;
+            color: var(--text-secondary-light);
+            min-width: 60px; /* Hizalama için */
+        }
+        .contact-info-futuristic p a {
+            color: var(--accent-cyber-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: text-shadow 0.3s ease, color 0.3s ease;
+            border-bottom: 1px dashed var(--border-subtle);
+            padding-bottom: 2px;
+        }
+        .contact-info-futuristic p a:hover {
+            color: #fff;
+            text-shadow: var(--shadow-soft-glow);
+            border-bottom-color: var(--accent-cyber-blue);
+        }
+        .contact-info-futuristic .contact-icon-futuristic {
+            margin-right: 12px;
+            color: var(--accent-cyber-blue);
+            width: 20px; 
+            text-align: center;
+            filter: drop-shadow(0 0 3px var(--accent-cyber-blue));
+        }
+
+        .site-footer-futuristic {
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary-light);
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 30px;
+            background: rgba(10,20,40,0.4);
+        }
+        
+        /* Duyarlılık */
+        @media (max-width: 768px) {
+            body { padding: 20px 10px; }
+            .futuristic-header h1 { font-size: 2.2rem; }
+            .futuristic-header p.subtitle-futuristic { font-size: 1rem; }
+            h2.futuristic-section-title { font-size: 1.6rem; }
+            .skills-grid-futuristic { grid-template-columns: 1fr; }
+            .profile-pic-futuristic { width: 120px; height: 120px; }
+        }
+         @media (max-width: 480px) {
+            .futuristic-header { padding: 30px 15px; }
+            .futuristic-header h1 { font-size: 1.9rem; }
+            .futuristic-main-content, section.futuristic-section { padding: 15px; }
+            h2.futuristic-section-title { font-size: 1.4rem; }
+         }
+
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Oğuzhan Taçtan</h1>
-    <p>Development & Middleware & DevOps • React / NodeJS / Monitoring</p>
-  </header>
+    <div class="futuristic-cv-container">
+        <header class="futuristic-header">
+            <img src="https://via.placeholder.com/140" alt="Oğuzhan Taçtan" class="profile-pic-futuristic"> <h1>Oğuzhan Taçtan</h1>
+            <p class="subtitle-futuristic">Development • Middleware • DevOps // React | NodeJS | Monitoring Systems</p>
+        </header>
 
-  <div class="container">
-    <section>
-      <h2>🧑‍💻 Hakkımda</h2>
-      <p> Orta Katman sistemleri üzerinde uzmanlaşmış, modern web teknolojileriyle (NodeJS, React) full stack projeler geliştiren bir yazılım geliştiricisiyim.
-        DevOps, sunucu yönetimi ve uygulama sunucusu konularında da aktif rol alıyorum. Temiz kod, sade tasarım ve sürdürülebilirlik önceliğimdir.</p>
-    </section>
+        <div class="futuristic-main-content">
+            <section class="futuristic-section about-me-futuristic">
+                <h2 class="futuristic-section-title"><i class="fas fa-atom section-icon-futuristic"></i>Profil_Verisi // Hakkımda</h2>
+                <p>Orta Katman sistemleri mimarisinde uzmanlaşmış, modern web teknolojileri (NodeJS, React) ile yüksek performanslı full stack projeler geliştiren bir yazılım geliştiricisiyim. DevOps paradigmaları, sunucu optimizasyonu ve application server yönetimi konularında derinlemesine tecrübeye sahibim. Önceliğim; temiz, modüler kod ve sürdürülebilir, ölçeklenebilir sistemler inşa etmektir.</p>
+            </section>
 
-    <section>
-      <h2>🛠️ Yetenekler</h2>
-      <div class="skills-grid">
-        <div class="skill">
-          <strong>Openshift</strong>
-          <div class="bar"><div class="bar-fill" style="width: 90%;"></div></div>
-        </div>
-        <div class="skill">
-          <strong>Kubernetes</strong>
-          <div class="bar"><div class="bar-fill" style="width: 85%;"></div></div>
-        </div class="skill">
-        <div class="skill">
-          <strong>Docker</strong>
-          <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
-        </div class="skill">
-        <div class="skill">
-          <strong>Linux</strong>
-          <div class="bar"><div class="bar-fill" style="width: 60%;"></div></div>
-        </div>
-        <div class="skill">
-          <strong>NodeJS</strong>
-          <div class="bar"><div class="bar-fill" style="width: 80%;"></div></div>
-        </div>
-        <div class="skill">
-          <strong>ReactJS</strong>
-          <div class="bar"><div class="bar-fill" style="width: 85%;"></div></div>
-        </div>
-        <div class="skill">
-          <strong>Dynatrace</strong>
-          <div class="bar"><div class="bar-fill" style="width: 95%;"></div></div>
-        </div>
-        <div class="skill">
-          <strong>GO</strong>
-          <div class="bar"><div class="bar-fill" style="width: 20%;"></div></div>
-        </div>
-		<div class="skill">
-          <strong>Weblogic</strong>
-          <div class="bar"><div class="bar-fill" style="width: 60%;"></div></div>
-        </div>
-      </div>
-    </section>
+            <section class="futuristic-section skills-section-futuristic">
+                <h2 class="futuristic-section-title"><i class="fas fa-cogs section-icon-futuristic"></i>Yetenek_Matrisi // Beceriler</h2>
+                <div class="skills-grid-futuristic">
+                    <div class="skill-item-futuristic">
+                        <div class="skill-info-futuristic">
+                            <strong>Openshift // Konteyner Orkestrasyonu</strong>
+                            <span class="percentage-futuristic">90%</span>
+                        </div>
+                        <div class="progress-bar-futuristic"><div class="progress-bar-fill-futuristic" data-width="90"></div></div>
+                    </div>
+                    <div class="skill-item-futuristic">
+                        <div class="skill-info-futuristic">
+                            <strong>Kubernetes // Dağıtık Sistemler</strong>
+                            <span class="percentage-futuristic">85%</span>
+                        </div>
+                        <div class="progress-bar-futuristic"><div class="progress-bar-fill-futuristic" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-item-futuristic">
+                        <div class="skill-info-futuristic">
+                            <strong>Docker // Sanallaştırma</strong>
+                            <span class="percentage-futuristic">80%</span>
+                        </div>
+                        <div class="progress-bar-futuristic"><div class="progress-bar-fill-futuristic" data-width="80"></div></div>
+                    </div>
+                     <div class="skill-item-futuristic">
+                        <div class="skill-info-futuristic">
+                            <strong>Linux // Sistem Yönetimi</strong>
+                            <span class="percentage-futuristic">60%</span>
+                        </div>
+                        <div class="progress-bar-futuristic"><div class="progress-bar-fill-futuristic" data-width="60"></div></div>
+                    </div>
+                    <div class="skill-item-futuristic">
+                        <div class="skill-info-futuristic">
+                            <strong>NodeJS // Backend API Geliştirme</strong>
+                            <span class="percentage-futuristic">80%</span>
+                        </div>
+                        <div class="progress-bar-futuristic"><div class="progress-bar-fill-futuristic" data-width="80"></div></div>
+                    </div>
+                    <div class="skill-item-futuristic">
+                        <div class="skill-info-futuristic">
+                            <strong>ReactJS // Frontend UI/UX</strong>
+                            <span class="percentage-futuristic">85%</span>
+                        </div>
+                        <div class="progress-bar-futuristic"><div class="progress-bar-fill-futuristic" data-width="85"></div></div>
+                    </div>
+                    <div class="skill-item-futuristic">
+                        <div class="skill-info-futuristic">
+                            <strong>Dynatrace // APM & Gözlemleme</strong>
+                            <span class="percentage-futuristic">95%</span>
+                        </div>
+                        <div class="progress-bar-futuristic"><div class="progress-bar-fill-futuristic" data-width="95"></div></div>
+                    </div>
+                    <div class="skill-item-futuristic">
+                        <div class="skill-info-futuristic">
+                            <strong>GO // Sistem Programlama</strong>
+                            <span class="percentage-futuristic">20%</span>
+                        </div>
+                        <div class="progress-bar-futuristic"><div class="progress-bar-fill-futuristic" data-width="20"></div></div>
+                    </div>
+                    <div class="skill-item-futuristic">
+                        <div class="skill-info-futuristic">
+                            <strong>Weblogic // Java EE Sunucuları</strong>
+                            <span class="percentage-futuristic">60%</span>
+                        </div>
+                        <div class="progress-bar-futuristic"><div class="progress-bar-fill-futuristic" data-width="60"></div></div>
+                    </div>
+                </div>
+            </section>
 
-    <section>
-      <h2>💼 Deneyim</h2>
-      <div class="experience">
-        <h3>Allianz Sigorta</h3>
-        <p>Orta Katman Uzmanı | 01/2023 - Günümüz</p>
-        <p>OpenShift, Dynatrace ve custom dashboard sistemleri ile canlı izleme çözümleri geliştirdim.</p>
-      </div>
-	  <div class="experience">
-        <h3>PrimeIT Bilişim</h3>
-        <p>Full Stack Developer | 01/2022 - Günümüz</p>
-        <p>ReactJS ve NodeJS gibi ortamlarda Monitoring toolu ve db script çalıştırma toolu yazılmasında görev aldım.</p>
-      </div>
-    </section>
+            <section class="futuristic-section experience-section-futuristic">
+                <h2 class="futuristic-section-title"><i class="fas fa-history section-icon-futuristic"></i>Görev_Kayıtları // Deneyim</h2>
+                <div class="content-card-futuristic experience">
+                    <h3>Allianz Sigorta // Sistem Entegrasyon</h3>
+                    <p class="meta-futuristic">Orta Katman Uzmanı | 01/2023 - Aktif</p>
+                    <ul>
+                        <li>OpenShift, Dynatrace ve özel dashboard sistemleri ile gerçek zamanlı izleme altyapıları geliştirdim.</li>
+                        <li>Uygulama sunucularının (Weblogic, JBoss) konfigürasyonu, performans ayarları ve otomasyonu.</li>
+                        <li>CI/CD pipeline optimizasyonu ve sürüm yönetimi.</li>
+                    </ul>
+                </div>
+                <div class="content-card-futuristic experience">
+                    <h3>PrimeIT Bilişim // Yazılım Geliştirme</h3>
+                    <p class="meta-futuristic">Full Stack Developer | 01/2022 - 01/2023</p>
+                     <ul>
+                        <li>ReactJS ve NodeJS tabanlı Monitoring aracı ve DB script çalıştırma otomasyonu (DbRunner) geliştirdim.</li>
+                        <li>Mikroservis mimarilerine geçiş ve entegrasyon süreçlerinde rol aldım.</li>
+                    </ul>
+                </div>
+            </section>
 
-    <section>
-      <h2>📁 Projeler</h2>
-      <div class="project">
-        <h3>PrimeON</h3>
-        <p>Database ve Host izleme aracı</p>
-      </div>
-      <div class="project">
-        <h3>DbRunner</h3>
-        <p>Database script çalıştırma otomasyon aracı</p>
-      </div>
-      <div class="project">
-        <h3>Kubernetes Taşınması</h3>
-        <p>Firmada Kubernetes geçiş çalışmalarında aktif rol aldım.</p>
-      </div>
-    </section>
+            <section class="futuristic-section projects-section-futuristic">
+                <h2 class="futuristic-section-title"><i class="fas fa-drafting-compass section-icon-futuristic"></i>Proje_Arşivi // Projeler</h2>
+                <div class="content-card-futuristic project">
+                    <h3>Proje: PrimeON // İzleme Sistemi</h3>
+                    <p class="meta-futuristic">Teknolojiler: React, NodeJS, MongoDB, Docker, Prometheus Entegrasyonu</p>
+                    <p>Dağıtık sistemler için kapsamlı database ve host izleme platformu. Anomali tespiti ve proaktif uyarı mekanizmaları.</p>
+                </div>
+                <div class="content-card-futuristic project">
+                    <h3>Proje: DbRunner // Otomasyon Aracı</h3>
+                    <p class="meta-futuristic">Teknolojiler: NodeJS, Express, OracleDB, MSSQL, API Entegrasyonları</p>
+                    <p>Çoklu veritabanı platformlarında script dağıtım ve yürütme süreçlerini otomatize eden web tabanlı arayüz.</p>
+                </div>
+                <div class="content-card-futuristic project">
+                    <h3>Proje: Kubernetes Altyapı Modernizasyonu</h3>
+                    <p class="meta-futuristic">Rol: DevOps Mühendisi & Çözüm Mimarı Destek</p>
+                    <p>Kurumsal uygulamaların monolitik yapıdan Kubernetes tabanlı mikroservis mimarisine geçişinde aktif rol. Helm chart oluşturma, CI/CD entegrasyonu.</p>
+                </div>
+            </section>
 
-    <section>
-      <h2>📞 İletişim</h2>
-      <p><strong>Email:</strong> oguzhantactan09@gmail.com</p>
-      <p><strong><a href="https://www.linkedin.com/in/oğuzhan-taçtan-463a421ab">LinkedIn:</a></strong></p>
-    </section>
+            <section class="futuristic-section contact-section-futuristic">
+                <h2 class="futuristic-section-title"><i class="fas fa-broadcast-tower section-icon-futuristic"></i>İletişim_Kanalları // Bağlantı</h2>
+                <div class="contact-info-futuristic">
+                    <p><i class="fas fa-envelope-open-text contact-icon-futuristic"></i><strong>E-Posta:</strong> <a href="mailto:oguzhantactan09@gmail.com">oguzhantactan09@gmail.com</a></p>
+                    <p><i class="fab fa-linkedin contact-icon-futuristic"></i><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/oğuzhan-taçtan-463a421ab" target="_blank" rel="noopener noreferrer">/in/oğuzhan-taçtan</a></p>
+                </div>
+            </section>
+        </div>
+    </div>
 
-    <footer>
-      © 2025 Oğuzhan Taçtan • Tüm Hakları Saklıdır
+    <footer class="site-footer-futuristic">
+        Sistem Zamanı: <span id="currentYearFuturistic"></span> // Oğuzhan Taçtan // Tüm Veri Hakları Saklıdır.
     </footer>
-  </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillBars = document.querySelectorAll('.progress-bar-fill-futuristic');
+            
+            const animateSkillBar = (bar) => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+            };
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateSkillBar(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 }); // Daha erken tetikleme için threshold düşürüldü
+
+                skillBars.forEach(bar => {
+                    observer.observe(bar);
+                });
+            } else {
+                skillBars.forEach(bar => {
+                    animateSkillBar(bar);
+                });
+            }
+            
+            // Yıl ve saat için
+            const updateTime = () => {
+                const now = new Date();
+                const year = now.getFullYear();
+                const timeString = now.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                const footerTextElement = document.getElementById('currentYearFuturistic');
+                if (footerTextElement) {
+                     footerTextElement.parentElement.innerHTML = `Sistem Zamanı: ${timeString} // ${year} // Oğuzhan Taçtan // Tüm Veri Hakları Saklıdır.`;
+                }
+            }
+            updateTime(); // İlk yüklemede çalıştır
+            setInterval(updateTime, 1000); // Her saniye güncelle
+
+            // Header'daki dekoratif çizgiler için rastgele pozisyon (isteğe bağlı)
+            const header = document.querySelector('.futuristic-header');
+            if(header) {
+                const lines = [header.querySelector('::before'), header.querySelector('::after')];
+                // Bu pseudo-elementlere JS ile doğrudan erişim ve stil değişikliği mümkün değil.
+                // Eğer dinamik olmaları isteniyorsa, bunlar normal div elementleri olmalı.
+                // Şimdilik CSS ile statik kalacaklar.
+            }
+
+        });
+    </script>
 
 </body>
 </html>
