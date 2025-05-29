@@ -1,434 +1,270 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oğuzhan Taçtan | CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        :root {
-            /* Pastel renk paleti */
-            --primary-color: #A2D2FF; /* Yumuşak mavi */
-            --primary-color-light: #BBE0FF; /* Daha açık yumuşak mavi */
-            --secondary-color: #F0F2F5; /* Açık gri arka plan */
-            --text-light: #6B7280; /* Koyu gri, arka plan için uygun */
-            --text-dark: #374151; /* Daha koyu gri */
-            --container-bg: #FFFFFF; /* Beyaz */
-            --card-bg: #F8F9FA; /* Hafif gri kart arka planı */
-            --border-radius: 12px;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.03); /* Daha hafif gölge */
-            --font-sans: 'Outfit', sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background: linear-gradient(135deg, var(--secondary-color), #E0E4EB); /* Daha açık bir gradient */
-            color: var(--text-dark); /* Metin rengi koyu gri */
-            line-height: 1.6;
-            padding-top: 20px;
-        }
-
-        .profile-header {
-            text-align: center;
-            padding: 50px 20px 80px 20px;
-            background: transparent;
-        }
-
-        .profile-header img.profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid var(--primary-color); /* Ana rengi kullan */
-            margin-bottom: 20px;
-            object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Gölgeyi hafiflet */
-        }
-
-        .profile-header h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: 0.5px;
-            color: var(--text-dark); /* Başlık rengi koyu gri */
-        }
-
-        .profile-header p.subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light); /* Alt başlık rengi */
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: -60px auto 40px auto;
-            background: var(--container-bg);
-            color: var(--text-dark);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            position: relative;
-            z-index: 10;
-        }
-
-        section {
-            margin-bottom: 45px;
-        }
-        section:last-of-type {
-            margin-bottom: 0;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: var(--primary-color); /* Bölüm başlığı ana renk */
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #E5E7EB; /* Daha açık gri çizgi */
-            display: flex;
-            align-items: center;
-        }
-
-        h2 .section-icon {
-            margin-right: 12px;
-            font-size: 1.6rem;
-            color: var(--primary-color-light); /* İkon rengi ana renk açık tonu */
-        }
-
-        .about-me p {
-            font-size: 1rem;
-            color: var(--text-dark); /* Hakkımda metin rengi */
-            line-height: 1.7;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .skill {
-            background-color: var(--card-bg);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* Gölgeyi hafiflet */
-        }
-        
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .skill-info strong {
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-        .skill-info .percentage {
-            font-size: 0.9em;
-            font-weight: 500;
-            color: var(--primary-color); /* Yüzde rengi ana renk */
-        }
-
-        .bar {
-            background: #E0E0E0; /* Çubuk arka planı açık gri */
-            border-radius: 10px;
-            overflow: hidden;
-            height: 10px;
-        }
-
-        .bar-fill {
-            height: 100%;
-            background: var(--primary-color-light); /* Çubuk dolgu rengi ana renk açık tonu */
-            width: 0;
-            border-radius: 10px;
-            transition: width 1s ease-in-out;
-            text-align: right;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 5px solid var(--primary-color); /* Ana rengi kullan */
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05); /* Gölgeyi hafiflet */
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.08); /* Hover gölgeyi hafiflet */
-        }
-
-        .card h3 {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--primary-color); /* Kart başlık rengi ana renk */
-            margin-bottom: 5px;
-        }
-
-        .card p.meta {
-            font-size: 0.9rem;
-            color: #6B7280; /* Meta metin rengi */
-            margin-bottom: 10px;
-            font-style: italic;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: var(--text-dark); /* Kart metin rengi */
-            line-height: 1.6;
-        }
-        .card ul {
-            list-style-position: inside;
-            padding-left: 0;
-            margin-top: 10px;
-        }
-        .card ul li {
-            margin-bottom: 5px;
-            color: var(--text-dark); /* Liste öğeleri rengi */
-        }
-
-
-        .contact-info p {
-            margin-bottom: 10px;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-        }
-        .contact-info p strong {
-            margin-right: 8px;
-            color: var(--text-dark);
-        }
-        .contact-info p a {
-            color: var(--primary-color); /* Bağlantı rengi ana renk */
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .contact-info p a:hover {
-            color: var(--primary-color-light); /* Bağlantı hover rengi */
-            text-decoration: underline;
-        }
-        .contact-info .contact-icon {
-            margin-right: 10px;
-            color: var(--primary-color); /* İkon rengi ana renk */
-            width: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 0.9rem;
-            color: var(--text-dark); /* Footer metin rengi */
-            background: transparent;
-            margin-top: 20px;
-        }
-        
-        /* Duyarlılık */
-        @media (max-width: 768px) {
-            .profile-header h1 {
-                font-size: 2.2rem;
-            }
-            .profile-header p.subtitle {
-                font-size: 1rem;
-            }
-            .container {
-                margin: -40px 15px 30px 15px;
-                padding: 25px;
-            }
-            h2 {
-                font-size: 1.6rem;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            .profile-header img.profile-pic {
-                width: 120px;
-                height: 120px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oğuzhan Taçtan - CV</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    }
+    
+    .glass-card {
+      background: rgba(45, 55, 72, 0.7);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(178, 196, 252, 0.2);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #a5b4fc 0%, #c4b5fd 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .skill-pill {
+      background: rgba(165, 180, 252, 0.1);
+      border: 1px solid rgba(165, 180, 252, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .skill-pill:hover {
+      background: rgba(165, 180, 252, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #a5b4fc;
+      border: 2px solid #2d3748;
+      z-index: 2;
+    }
+    
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      left: -18px;
+      top: 20px;
+      bottom: -20px;
+      width: 2px;
+      background: rgba(165, 180, 252, 0.3);
+    }
+    
+    .project-card {
+      transition: all 0.3s ease;
+      background: rgba(45, 55, 72, 0.5);
+      border: 1px solid rgba(165, 180, 252, 0.1);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(165, 180, 252, 0.4);
+      box-shadow: 0 10px 25px -5px rgba(165, 180, 252, 0.1);
+    }
+    
+    .contact-icon {
+      transition: all 0.3s ease;
+    }
+    
+    .contact-icon:hover {
+      transform: scale(1.1);
+      color: #a5b4fc;
+    }
+  </style>
 </head>
-<body>
-
-    <header class="profile-header">
-        <img src="https://via.placeholder.com/150" alt="Oğuzhan Taçtan" class="profile-pic">
-        <h1>Oğuzhan Taçtan</h1>
-        <p class="subtitle">Development & Middleware & DevOps • React / NodeJS / Monitoring</p>
+<body class="text-gray-200 min-h-screen">
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Header -->
+    <header class="glass-card rounded-2xl p-8 mb-8">
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+        <div class="w-32 h-32 rounded-full bg-gradient-to-br from-indigo-300 to-purple-300 p-1 flex-shrink-0">
+          <div class="w-full h-full rounded-full bg-[#2d3748] flex items-center justify-center">
+            <span class="text-4xl gradient-text font-bold">OT</span>
+          </div>
+        </div>
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold gradient-text">Oğuzhan Taçtan</h1>
+          <p class="text-xl md:text-2xl mt-2 text-indigo-300">Orta Katman & Full Stack Developer</p>
+          <p class="mt-4 text-gray-300 max-w-2xl">
+            Uygulama sunucuları ve orta katman sistemleri uzmanı, NodeJS & React geliştiricisi. 
+            DevOps, container mimarileri ve otomasyon süreçlerinde deneyimli.
+          </p>
+          <div class="flex gap-4 mt-6">
+            <a href="https://github.com/oguzhantctn09" target="_blank" class="contact-icon text-xl text-gray-400 hover:text-indigo-300">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/oğuzhan-taçtan-463a421ab" target="_blank" class="contact-icon text-xl text-gray-400 hover:text-indigo-300">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:oguzhantactan09@gmail.com" class="contact-icon text-xl text-gray-400 hover:text-indigo-300">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="tel:+905424193207" class="contact-icon text-xl text-gray-400 hover:text-indigo-300">
+              <i class="fas fa-phone"></i>
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <div class="container">
-        <section class="about-me">
-            <h2><i class="fas fa-user-tie section-icon"></i>Hakkımda</h2>
-            <p>Orta Katman sistemleri üzerinde uzmanlaşmış, modern web teknolojileriyle (NodeJS, React) full stack projeler geliştiren bir yazılım geliştiricisiyim. DevOps, sunucu yönetimi ve uygulama sunucusu konularında da aktif rol alıyorum. Temiz kod, sade tasarım ve sürdürülebilirlik önceliğimdir.</p>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Left Column -->
+      <div class="lg:col-span-1 space-y-8">
+        <!-- Skills -->
+        <section class="glass-card rounded-2xl p-6">
+          <h2 class="text-2xl font-bold gradient-text mb-4">Yetenekler</h2>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-pill px-3 py-1 rounded-full text-sm">Node.js</span>
+            <span class="skill-pill px-3 py-1 rounded-full text-sm">React</span>
+            <span class="skill-pill px-3 py-1 rounded-full text-sm">Docker</span>
+            <span class="skill-pill px-3 py-1 rounded-full text-sm">Kubernetes</span>
+            <span class="skill-pill px-3 py-1 rounded-full text-sm">OpenShift</span>
+            <span class="skill-pill px-3 py-1 rounded-full text-sm">WebLogic</span>
+            <span class="skill-pill px-3 py-1 rounded-full text-sm">JBOSS</span>
+            <span class="skill-pill px-3 py-1 rounded-full text-sm">Nginx</span>
+          </div>
         </section>
 
-        <section class="skills-section">
-            <h2><i class="fas fa-cogs section-icon"></i>Yetenekler</h2>
-            <div class="skills-grid">
-                <div class="skill">
-                    <div class="skill-info">
-                        <strong>Openshift</strong>
-                        <span class="percentage">90%</span>
-                    </div>
-                    <div class="bar"><div class="bar-fill" data-width="90%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-info">
-                        <strong>Kubernetes</strong>
-                        <span class="percentage">85%</span>
-                    </div>
-                    <div class="bar"><div class="bar-fill" data-width="85%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-info">
-                        <strong>Docker</strong>
-                        <span class="percentage">80%</span>
-                    </div>
-                    <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-info">
-                        <strong>Linux</strong>
-                        <span class="percentage">60%</span>
-                    </div>
-                    <div class="bar"><div class="bar-fill" data-width="60%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-info">
-                        <strong>NodeJS</strong>
-                        <span class="percentage">80%</span>
-                    </div>
-                    <div class="bar"><div class="bar-fill" data-width="80%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-info">
-                        <strong>ReactJS</strong>
-                        <span class="percentage">85%</span>
-                    </div>
-                    <div class="bar"><div class="bar-fill" data-width="85%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-info">
-                        <strong>Dynatrace</strong>
-                        <span class="percentage">95%</span>
-                    </div>
-                    <div class="bar"><div class="bar-fill" data-width="95%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-info">
-                        <strong>GO</strong>
-                        <span class="percentage">20%</span>
-                    </div>
-                    <div class="bar"><div class="bar-fill" data-width="20%"></div></div>
-                </div>
-                <div class="skill">
-                    <div class="skill-info">
-                        <strong>Weblogic</strong>
-                        <span class="percentage">60%</span>
-                    </div>
-                    <div class="bar"><div class="bar-fill" data-width="60%"></div></div>
-                </div>
+        <!-- Education -->
+        <section class="glass-card rounded-2xl p-6">
+          <h2 class="text-2xl font-bold gradient-text mb-4">Eğitim</h2>
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-semibold text-indigo-300">Hacettepe Üniversitesi</h3>
+              <p class="text-sm text-gray-400">Geomatik Mühendisliği</p>
+              <p class="text-sm text-gray-400">2016 - 2021</p>
             </div>
+          </div>
         </section>
 
-        <section class="experience-section">
-            <h2><i class="fas fa-briefcase section-icon"></i>Deneyim</h2>
-            <div class="card experience">
-                <h3>Allianz Sigorta</h3>
-                <p class="meta">Orta Katman Uzmanı | 01/2023 - Günümüz</p>
-                <ul>
-                    <li>OpenShift, Dynatrace ve custom dashboard sistemleri ile canlı izleme çözümleri geliştirdim.</li>
-                    <li>Uygulama sunucularının (Weblogic, JBoss vb.) yönetimi ve optimizasyonu.</li>
-                    <li>CI/CD süreçlerinin iyileştirilmesi ve otomasyonu.</li>
+        <!-- Languages -->
+        <section class="glass-card rounded-2xl p-6">
+          <h2 class="text-2xl font-bold gradient-text mb-4">Diller</h2>
+          <div class="space-y-2">
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>Türkçe</span>
+                <span class="text-indigo-300">Ana Dil</span>
+              </div>
+              <div class="w-full bg-gray-600 rounded-full h-1.5">
+                <div class="bg-indigo-300 h-1.5 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm mb-1">
+                <span>İngilizce</span>
+                <span class="text-indigo-300">Profesyonel</span>
+              </div>
+              <div class="w-full bg-gray-600 rounded-full h-1.5">
+                <div class="bg-indigo-300 h-1.5 rounded-full" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column -->
+      <div class="lg:col-span-2 space-y-8">
+        <!-- Experience -->
+        <section class="glass-card rounded-2xl p-6">
+          <h2 class="text-2xl font-bold gradient-text mb-6">Deneyim</h2>
+          <div class="space-y-6">
+            <div class="relative pl-8 timeline-item">
+              <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-indigo-300 border-4 border-[#2d3748]"></div>
+              <div>
+                <h3 class="text-xl font-semibold text-indigo-300">Allianz Sigorta</h3>
+                <p class="text-sm text-gray-400 mb-2">Orta Katman Uzmanı | 01/2023 - halen</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-300 pl-2">
+                  <li>Sunucu ve uygulama platformlarının yönetimi</li>
+                  <li>İzleme altyapılarının kurulumu ve yönetimi</li>
+                  <li>DevOps entegrasyonları ve CI/CD süreçleri</li>
+                  <li>Container tabanlı mimarilerin yönetimi</li>
                 </ul>
+              </div>
             </div>
-            <div class="card experience">
-                <h3>PrimeIT Bilişim</h3>
-                <p class="meta">Full Stack Developer | 01/2022 - 01/2023</p>
-                <ul>
-                    <li>ReactJS ve NodeJS kullanarak Monitoring toolu geliştirme projesinde aktif rol aldım.</li>
-                    <li>Database script çalıştırma otomasyon aracı (DbRunner) geliştirildi.</li>
-                    <li>Mevcut uygulamaların bakımı ve yeni özellikler eklenmesi.</li>
+            
+            <div class="relative pl-8 timeline-item">
+              <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-indigo-300 border-4 border-[#2d3748]"></div>
+              <div>
+                <h3 class="text-xl font-semibold text-indigo-300">PrimeIT Bilişim</h3>
+                <p class="text-sm text-gray-400 mb-2">Full Stack Developer | 01/2022 - halen</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-300 pl-2">
+                  <li>Kurumsal dashboard ve raporlama araçları geliştirme</li>
+                  <li>React ve Node.js tabanlı uygulamalar</li>
                 </ul>
+              </div>
             </div>
+          </div>
         </section>
 
-        <section class="projects-section">
-            <h2><i class="fas fa-project-diagram section-icon"></i>Projeler</h2>
-            <div class="card project">
-                <h3>PrimeON</h3>
-                <p class="meta">Teknolojiler: React, NodeJS, MongoDB, Docker</p>
-                <p>Kapsamlı bir database ve host izleme aracı. Gerçek zamanlı metrik toplama, anomali tespiti ve uyarı mekanizmaları içerir.</p>
+        <!-- Projects -->
+        <section class="glass-card rounded-2xl p-6">
+          <h2 class="text-2xl font-bold gradient-text mb-6">Projeler</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="project-card rounded-xl p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-full bg-indigo-900/30 flex items-center justify-center text-indigo-300">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="font-semibold text-lg text-indigo-300">PrimeON</h3>
+              </div>
+              <p class="text-sm text-gray-400">
+                Gerçek zamanlı veri izleme aracı. WebSocket altyapısı, Prometheus entegrasyonu ve kullanıcı bazlı yetkilendirme içerir.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="text-xs px-2 py-1 bg-indigo-900/30 text-indigo-300 rounded">React</span>
+                <span class="text-xs px-2 py-1 bg-indigo-900/30 text-indigo-300 rounded">Node.js</span>
+                <span class="text-xs px-2 py-1 bg-indigo-900/30 text-indigo-300 rounded">WebSocket</span>
+              </div>
             </div>
-            <div class="card project">
-                <h3>DbRunner</h3>
-                <p class="meta">Teknolojiler: NodeJS, Express, OracleDB, MSSQL</p>
-                <p>Farklı veritabanı sistemlerinde (Oracle, MSSQL, PostgreSQL) script çalıştırma süreçlerini otomatize eden ve yöneten web tabanlı bir araç.</p>
+            
+            <div class="project-card rounded-xl p-5">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-full bg-indigo-900/30 flex items-center justify-center text-indigo-300">
+                  <i class="fas fa-server"></i>
+                </div>
+                <h3 class="font-semibold text-lg text-indigo-300">OpenShift Tool</h3>
+              </div>
+              <p class="text-sm text-gray-400">
+                Kubernetes üzerinde çalışan middleware servislerini yöneten iç araç. Cluster analizi, log izleme ve pod yönetimi özellikleri.
+              </p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="text-xs px-2 py-1 bg-indigo-900/30 text-indigo-300 rounded">OpenShift</span>
+                <span class="text-xs px-2 py-1 bg-indigo-900/30 text-indigo-300 rounded">Kubernetes</span>
+                <span class="text-xs px-2 py-1 bg-indigo-900/30 text-indigo-300 rounded">Node.js</span>
+              </div>
             </div>
-            <div class="card project">
-                <h3>Kubernetes Altyapı Geçişi</h3>
-                <p class="meta">Rol: DevOps Destek & Uygulama Entegrasyonu</p>
-                <p>Şirket içi uygulamaların monolitik yapıdan mikroservis mimarisine geçirilerek Kubernetes üzerinde deploy edilmesi sürecinde aktif rol aldım. YAML manifestlerinin hazırlanması, CI/CD pipeline entegrasyonları ve performans optimizasyonları yapıldı.</p>
-            </div>
+          </div>
         </section>
 
-        <section class="contact-section">
-            <h2><i class="fas fa-envelope section-icon"></i>İletişim</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-envelope contact-icon"></i><strong>Email:</strong> <a href="mailto:oguzhantactan09@gmail.com">oguzhantactan09@gmail.com</a></p>
-                <p><i class="fab fa-linkedin contact-icon"></i><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/oğuzhan-taçtan-463a421ab" target="_blank" rel="noopener noreferrer">linkedin.com/in/oğuzhan-taçtan</a></p>
-            </div>
+        <!-- About -->
+        <section class="glass-card rounded-2xl p-6">
+          <h2 class="text-2xl font-bold gradient-text mb-4">Hakkımda</h2>
+          <p class="text-gray-300 mb-4">
+            Uygulama sunucuları ve orta katman sistemleri konusunda uzmanlaşmış, aynı zamanda full stack web teknolojileriyle (NodeJS, React) projeler geliştiren bir yazılımcıyım.
+          </p>
+          <p class="text-gray-300">
+            DevOps, container mimarileri ve otomasyon süreçlerinde aktif rol oynuyorum. Sadelik, sürdürülebilirlik ve güvenlik odaklı çalışırım. Yeni teknolojileri öğrenmeye ve problem çözmeye tutkuluyum.
+          </p>
         </section>
-
-        <footer>
-            © <span id="currentYear"></span> Oğuzhan Taçtan • Tüm Hakları Saklıdır
-        </footer>
+      </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const skillBars = document.querySelectorAll('.bar-fill');
-            
-            const animateSkillBar = (bar) => {
-                const width = bar.getAttribute('data-width');
-                bar.style.width = width;
-            };
-
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            animateSkillBar(entry.target);
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.5 });
-
-                skillBars.forEach(bar => {
-                    observer.observe(bar);
-                });
-            } else {
-                skillBars.forEach(bar => {
-                    animateSkillBar(bar);
-                });
-            }
-
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
-        });
-    </script>
-
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-sm text-gray-400">
+      <p>© 2025 Oğuzhan Taçtan - Tüm hakları saklıdır</p>
+    </footer>
+  </div>
 </body>
 </html>
